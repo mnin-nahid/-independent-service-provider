@@ -1,12 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/shared/Header/Header';
+import Header from './Pages/Shared/Header/Header';
+import Footer from './Pages/Shared/Footer/Footer';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home/Home';
+import Blogs from './Pages/Blogs/Blogs';
+import About from './Pages/About/About';
+import Login from './Pages/Login/Login/Login';
+import Registration from './Pages/Login/Registration/Registration';
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <h1 className='text-primary'>hello</h1>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/ragistration' element={<Registration></Registration>}></Route>
+      </Routes>
+      {/* <Home></Home> */}
+      <Footer></Footer>
     </div>
   );
 }
