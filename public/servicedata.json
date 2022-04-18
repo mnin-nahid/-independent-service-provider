@@ -1,0 +1,44 @@
+[
+  {
+    "id": "01",
+    "name": "Cloud Services",
+    "price": 3999,
+    "details": "Simply put, cloud computing is the delivery of computing services",
+    "img" : "https://res.cloudinary.com/dgfgzd6m9/image/upload/v1650296239/img1_ec4urb.png"
+  },
+  {
+    "id": "02",
+    "name": "Cyber Security",
+    "price": 6950,
+    "details": "Cyber security is the application of technologies",
+    "img" : "https://res.cloudinary.com/dgfgzd6m9/image/upload/v1650296235/img2_hcg6qb.png"
+  },
+  {
+    "id": "03",
+    "name": "Data Security",
+    "price": 7080,
+    "details": "Data security includes data encryption, hashing, tokenization",
+    "img" : "https://res.cloudinary.com/dgfgzd6m9/image/upload/v1650296238/img3_yqw7wn.jpg"
+  },
+  {
+    "id": "04",
+    "name": "Capital Merkating",
+    "price": 8138,
+    "details": "Capital markets are where savings and investments are channeled between suppliers",
+    "img" : "https://res.cloudinary.com/dgfgzd6m9/image/upload/v1650296231/img4_dqjhep.png"
+  },
+  {
+    "id": "05",
+    "name": "Content Engineering",
+    "price": 3320,
+    "details": "Content engineering is the practice of organizing the shape",
+    "img" : "https://res.cloudinary.com/dgfgzd6m9/image/upload/v1650296232/img5_sbi8xc.png"
+  },
+  {
+    "id": "06",
+    "name": "IT Management",
+    "price": 5208,
+    "details": "Just as important, it's about helping people work better.",
+    "img" : "https://res.cloudinary.com/dgfgzd6m9/image/upload/v1650296231/img6_ccklue.png"
+  }
+]

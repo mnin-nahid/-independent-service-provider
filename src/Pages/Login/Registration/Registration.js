@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import loginImg from '../../../images/login.webp'
@@ -12,7 +12,16 @@ const Registration = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    let errorElement;
+    if (error) {
+        errorElement = <div>
+            <p className='text-danger'>{error.message}</p>
+        </div>
+    }
+
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
 
@@ -29,6 +38,13 @@ const Registration = () => {
         createUserWithEmailAndPassword(email, password);
     }
 
+    const resetPassword = async (event) => {
+        const email = event.target.email.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+
+    }
+
 
     return (
         <div className='registration text-center w-50 mt-4 mx-auto'>
@@ -38,10 +54,11 @@ const Registration = () => {
                 </div>
                 <div className='w-100 my-auto'>
                     <h2>Registration to <br /> <span className='text-primary'>GoTechDoctor</span></h2>
+                    {errorElement}
                     <form className='w-100' onSubmit={handleRegister}>
-                        <input className='w-75 mt-2' type="text" name="name" id="name" placeholder='Enter your name'/>
+                        <input className='w-75 mt-2' type="text" name="name" id="name" placeholder='Enter your name' />
                         <input className='w-75 mt-2' type="email" name="email" id="email" placeholder='enter your email' required />
-                        <input className='w-75 mt-2' type="password" name="password" id="password" placeholder='Enter your password' required/>
+                        <input className='w-75 mt-2' type="password" name="password" id="password" placeholder='Enter your password' required />
                         <br />
                         <button className='btn btn-primary mt-2' type="submit">Registration</button>
                     </form>
@@ -49,6 +66,7 @@ const Registration = () => {
                 </div>
             </div>
             <p className='mt-4'>Alrady have an account? <Link to='/login' className='text-primary pe-auto text-decoration-none'>Login to your account</Link></p>
+            <p className='mt-4'>Forgot your password? <Link to='/login' className='text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset password</Link></p>
         </div>
     );
 };

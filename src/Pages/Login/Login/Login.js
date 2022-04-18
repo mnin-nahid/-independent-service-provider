@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import loginImg from '../../../images/login.webp'
 import './Login.css'
@@ -21,6 +21,13 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    let errorElement;
+    if (error) {
+        errorElement = <div>
+            <p className='text-danger'>{error.message}</p>
+        </div>
+    }
+
 
 
     const handelSubmit = event => {
@@ -30,6 +37,8 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password)
     }
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
 
     if (user) {
         navigate(from, { replace: true });
@@ -37,6 +46,12 @@ const Login = () => {
 
     const navigateRegister = event => {
         navigate('/ragistration');
+    }
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+
     }
 
     return (
@@ -47,6 +62,9 @@ const Login = () => {
                 </div>
                 <div className='w-100 my-auto'>
                     <h2>Login to <br /> <span className='text-primary'>GoTechDoctor</span></h2>
+                    {
+                        errorElement
+                    }
                     <form className='w-100' onSubmit={handelSubmit}>
                         <input ref={emailRef} className='w-75 mt-2' type="email" name="email" id="email" placeholder='enter your email' required />
                         <input ref={passwordRef} className='w-75 mt-2' type="password" name="password" id="password" placeholder='Enter your password' required />
@@ -59,6 +77,7 @@ const Login = () => {
                 
             </div>
             <p className='mt-4'>New to Unique Car Service? <Link to='/ragistration' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Create an account</Link></p>
+            <p className='mt-4'>Forgot your password? <Link to='/login' className='text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset password</Link></p>
         </div>
     );
 };
