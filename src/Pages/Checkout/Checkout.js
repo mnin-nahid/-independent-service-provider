@@ -1,12 +1,14 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 const Checkout = () => {
     const {serviceId} = useParams();
 
+    const location = useLocation();
+
     return (
-        <div>
-            <h2 className='text-center my-5'>This is Checkout page! : {serviceId}</h2>
+        <div style={{height: 500}}>
+            <h2 className='text-center'>This is Checkout page! : {serviceId}</h2>
 
         </div>
     );
