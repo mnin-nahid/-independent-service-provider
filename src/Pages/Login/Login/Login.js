@@ -1,12 +1,22 @@
 import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 import loginImg from '../../../images/login.webp'
 import './Login.css'
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const navigate = useNavigate();
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
 
 
@@ -14,7 +24,14 @@ const Login = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+
+        signInWithEmailAndPassword(email, password)
     }
+
+    if (user) {
+        navigate('/home');
+    }
+
     const navigateRegister = event => {
         navigate('/ragistration');
     }
@@ -34,7 +51,9 @@ const Login = () => {
                         <button className='btn btn-primary mt-2' type="submit">Log in</button>
                     </form>
                     <small><button className='btn btn-link'>Forgot password</button></small>
+                    <SocialLogin></SocialLogin>
                 </div>
+                
             </div>
             <p className='mt-4'>New to Unique Car Service? <Link to='/ragistration' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Create an account</Link></p>
         </div>
