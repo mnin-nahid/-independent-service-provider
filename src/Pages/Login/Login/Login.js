@@ -1,29 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import loginImg from '../../../images/login.webp'
+import './Login.css'
 
 const Login = () => {
-    const navigateRegister = () => {
-        console.log('button clicked')
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const navigate = useNavigate();
+
+
+
+    const handelSubmit = event => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
     }
+    const navigateRegister = event => {
+        navigate('/ragistration');
+    }
+
     return (
-        <div className='border border-primary text-center w-50 mt-4 mx-auto'>
-            <div className='d-flex border border-primary'>
-                <div className='border border-primary'>
+        <div className='login text-center w-50 mt-4 mx-auto'>
+            <div className='d-flex'>
+                <div>
                     <img src={loginImg} alt="" />
                 </div>
                 <div className='w-100 my-auto'>
                     <h2>Login to <br /> <span className='text-primary'>GoTechDoctor</span></h2>
-                    <form className='border border-primary w-100'>
-                        <input className='w-75 mt-2' type="email" name="email" id="email" placeholder='enter your email' required/>
+                    <form className='w-100' onSubmit={handelSubmit}>
+                        <input ref={emailRef} className='w-75 mt-2' type="email" name="email" id="email" placeholder='enter your email' required />
+                        <input ref={passwordRef} className='w-75 mt-2' type="password" name="password" id="password" placeholder='Enter your password' required />
                         <br />
-                        <input className='w-75 mt-2' type="password" name="password" id="password" placeholder='Enter your password' />
-                        <br />
-                        <input className='btn btn-primary w-50 mt-2' type="submit" value="Login" />
+                        <button className='btn btn-primary mt-2' type="submit">Log in</button>
                     </form>
+                    <small><button className='btn btn-link'>Forgot password</button></small>
                 </div>
             </div>
-            <p>New to Unique Car Service? <Link to='/ragistration' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Create an account</Link></p>
+            <p className='mt-4'>New to Unique Car Service? <Link to='/ragistration' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Create an account</Link></p>
         </div>
     );
 };

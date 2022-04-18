@@ -15,10 +15,9 @@ const Registration = () => {
                     <form className='w-100'>
                         <input className='w-75 mt-2' type="text" name="name" id="name" placeholder='Enter your name'/>
                         <input className='w-75 mt-2' type="email" name="email" id="email" placeholder='enter your email' required />
+                        <input className='w-75 mt-2' type="password" name="password" id="password" placeholder='Enter your password' required/>
                         <br />
-                        <input className='w-75 mt-2' type="password" name="password" id="password" placeholder='Enter your password' />
-                        <br />
-                        <input className='btn btn-primary w-50 mt-2' type="submit" value="Registration" />
+                        <button className='btn btn-primary mt-2' type="submit">Registration</button>
                     </form>
                 </div>
             </div>
