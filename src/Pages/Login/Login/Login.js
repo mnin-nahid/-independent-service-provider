@@ -5,6 +5,8 @@ import auth from '../../../firebase.init';
 import loginImg from '../../../images/login.webp'
 import './Login.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef();
@@ -49,8 +51,13 @@ const Login = () => {
     }
     const resetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('Sent email');
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else{
+            toast('Enter your email');
+        }
 
     }
 
@@ -73,11 +80,12 @@ const Login = () => {
                     </form>
                     <small><button className='btn btn-link'>Forgot password</button></small>
                     <SocialLogin></SocialLogin>
+                    <ToastContainer />
                 </div>
-                
+
             </div>
             <p className='mt-4'>New to Unique Car Service? <Link to='/ragistration' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Create an account</Link></p>
-            <p className='mt-4'>Forgot your password? <Link to='/login' className='text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset password</Link></p>
+            <p className='mt-4'>Forgot your password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset password</button></p>
         </div>
     );
 };

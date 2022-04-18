@@ -7,15 +7,27 @@ const Blogs = () => {
             <h1 className='text-center py-2'>Blog'<span className='text-primary'>s</span></h1>
             <div>
                 <h5>Difference between authorization and authentication.</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsa mollitia doloremque error deserunt adipisci perferendis, blanditiis amet autem, a, eaque labore saepe unde eius quidem quo. Nemo, voluptatem iusto!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, fuga voluptas, esse ducimus natus et laboriosam iusto temporibus soluta nesciunt libero sequi error? Sint, suscipit nam. Ut, illo vero recusandae quod ad libero, pariatur architecto reprehenderit corrupti voluptas incidunt mollitia quia! Sapiente enim dicta corporis aspernatur necessitatibus aut nihil possimus, assumenda ad omnis earum ullam explicabo est rerum. Nisi, optio. </p>
+                <p>In authentication process, the identity of users are checked for providing the access to the system. While in authorization process, person’s or user’s authorities are checked for accessing the resources. Authentication is done before the authorization process, whereas authorization process is done after the authentication process.</p>
             </div>
             <div>
                 <h5>Why are you using firebase? What other options do you have to implement authentication?</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, fuga voluptas, esse ducimus natus et laboriosam iusto temporibus soluta nesciunt libero sequi error? Sint, suscipit nam. Ut, illo vero recusandae quod ad libero, pariatur architecto reprehenderit corrupti voluptas incidunt mollitia quia! Sapiente enim dicta corporis aspernatur necessitatibus aut nihil possimus, assumenda ad omnis earum ullam explicabo est rerum. Nisi, optio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, fuga voluptas, esse ducimus natus et laboriosam iusto temporibus soluta nesciunt libero sequi error? Sint, suscipit nam. Ut, illo vero recusandae quod ad libero, pariatur architecto reprehenderit corrupti voluptas incidunt mollitia quia! Sapiente enim dicta corporis aspernatur necessitatibus aut nihil possimus, assumenda ad omnis earum ullam explicabo est rerum. Nisi, optio.</p>
+                <p>Firebase manages all data real-time in the database. So, the exchange of data to and fro from the database is easy and quick. Hence, if you are looking to develop mobile apps such as live streaming, chat messaging, etc., you can use Firebase.
+                    <br />
+                    Auth0, MongoDB, Passport, Okta, and Firebase are the most popular alternatives and competitors to Firebase Authentication.
+                </p>
             </div>
             <div>
                 <h5>What other services does firebase provide other than authentication.</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima architecto magnam animi consequatur hic eius. Voluptates repellat quisquam ipsa architecto nulla modi autem ex magnam, veritatis vero hic eos, ut, molestias odio dicta? Tempore quaerat, ducimus qui porro a obcaecati. Fugiat velit a ipsam omnis. Voluptas voluptatem eius cum officiis.</p>
+                <p>There are many services which Firebase provides, Most useful of them are:
+                    <li>Cloud Firestore.</li>
+                    <li>Cloud Functions.</li>
+                    <li>Authentication.</li>
+                    <li>Hosting.</li>
+                    <li>Cloud Storage.</li>
+                    <li>Google Analytics.</li>
+                    <li>Predictions.</li>
+                    <li>Cloud Messaging.</li>
+                </p>
             </div>
         </div>
     );
