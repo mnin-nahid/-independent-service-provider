@@ -1,0 +1,6 @@
+.blogs-container div{
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px 20px 30px 20px;
+    box-shadow: rgba(2, 19, 250, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}

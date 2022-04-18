@@ -1,0 +1,10 @@
+.banner {
+    background-image: url(../../../images/banner/banner4.jpg);
+    height: 500px;
+    border-radius: 0 0 50px 50px;
+    background-position: center;
+    background-size: cover;
+}
+.banner div{
+    padding-top: 300px;
+}

@@ -1,49 +1,17 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import firstimage from '../../../images/banner/banner1.jpg'
-import secondimage from '../../../images/banner/banner2.jpg'
-import thirdimage from '../../../images/banner/banner4.jpg'
+import bannerimg1 from '../../../images/banner/banner4.jpg'
+import './Banner.css'
 
 const Banner = () => {
-    return (
-        <Carousel fade>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={firstimage}
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={secondimage}
-      alt="Second slide"
-    />
-
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src={thirdimage}
-      alt="Third slide"
-    />
-
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel>
-    );
+  return (
+    <div className='banner'>
+      <div className='text-light  text-center w-50 mx-auto'>
+        <h1>Smart life, Smart solution. <br /> Success Guaranteed</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, labore. Dolorum voluptate praesentium ducimus, accusamus velit numquam quo excepturi adipisci porro debitis sed animi voluptas nostrum nesciunt similique tempore ratione maiores, ipsam quia hic placeat libero, omnis architecto! Iusto, quaerat.</p>
+      </div>
+    </div>
+  );
 };
 
 export default Banner;

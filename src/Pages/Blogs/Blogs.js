@@ -1,9 +1,10 @@
 import React from 'react';
+import './Blogs.css'
 
 const Blogs = () => {
     return (
-        <div className='px-4'>
-            <h1 className='text-primary text-center py-2'>Blogs</h1>
+        <div className='px-4 blogs-container'>
+            <h1 className='text-center py-2'>Blog'<span className='text-primary'>s</span></h1>
             <div>
                 <h5>Difference between authorization and authentication.</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsa mollitia doloremque error deserunt adipisci perferendis, blanditiis amet autem, a, eaque labore saepe unde eius quidem quo. Nemo, voluptatem iusto!Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, fuga voluptas, esse ducimus natus et laboriosam iusto temporibus soluta nesciunt libero sequi error? Sint, suscipit nam. Ut, illo vero recusandae quod ad libero, pariatur architecto reprehenderit corrupti voluptas incidunt mollitia quia! Sapiente enim dicta corporis aspernatur necessitatibus aut nihil possimus, assumenda ad omnis earum ullam explicabo est rerum. Nisi, optio. </p>
